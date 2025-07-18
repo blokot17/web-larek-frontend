@@ -8,13 +8,12 @@ export interface IProduct {
     description: string;
     image: string;
     category: string;
-    price: number;
+    price: number | null;
 }
 
 // Корзина с товарами и методами
 export interface IBasket {
     items: IBasketItem[];
-    totalPrice: number;
     addProducts(product: IProduct): void;
     removeProduct(productId: ProductID): void;
     getTotal(): number;
